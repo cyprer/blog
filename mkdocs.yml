@@ -1,7 +1,7 @@
 site_name: My Docs
 theme:
  name: material
-  palette:
+ palette:
     # 亮色主题
     - media: "(prefers-color-scheme: light)"
       scheme: default
