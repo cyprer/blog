@@ -1,6 +1,6 @@
 # 建站经历
-由于本人是Windows端,因此一项仅提供windows端的搭建教程
-本网站是基于mkdocs并用github page部署的,意味着你需要拥有自己的github账号
++ 由于本人是Windows端,因此一项仅提供windows端的搭建教程
++ 本网站是基于mkdocs并用github page部署的,意味着你需要拥有自己的github账号
 1. python环境,建议直接前往官网下载最新版即可
 2. 一个文本编辑器,这边推荐vscode
 3. git,直接去官网下载即可
@@ -11,6 +11,7 @@
 8.  mkdocs new .
 9.  mkdocs serve
 10. 在你键的文件夹下新建一个.github文件夹并在.github文件夹下新建一个workflows文件夹,然后在这个文件夹下创建一个ci.yml文件,内容是
+```
     name: ci
 on:
   push:
@@ -40,9 +41,11 @@ jobs:
             mkdocs-material-
       - run: pip install mkdocs-material
       - run: mkdocs gh-deploy --force
+```
 11. git init
 12. 这里在venv文件夹下新建一个.gitnore文件内容是
-    # Byte-compiled / optimized / DLL files
+```
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
@@ -171,11 +174,12 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-13. 然后可以git add .
-14. git commit -m "initial commit"
-15. 创建一个github仓库(应该都会吧我累了)
-16. git remote add 你自己的github仓库网站(以.git结尾)
-17. git branch -M main
-18. git push -u origin main
-19. 然后转到github仓库点击seting,再点击pages,Branch下选择gh-pages并save
-20. 然后在seting那一栏点击actions,你会看到workflows在部署你的网站等待一会就可以看到你的网站生成啦!!!
+```
+13.  然后可以git add .
+14.  git commit -m "initial commit"
+15.  创建一个github仓库(应该都会吧我累了)
+16.  git remote add 你自己的github仓库网站(以.git结尾)
+17.  git branch -M main
+18.  git push -u origin main
+19.  然后转到github仓库点击seting,再点击pages,Branch下选择gh-pages并save
+20.  然后在seting那一栏点击actions,你会看到workflows在部署你的网站等待一会就可以看到你的网站生成啦!!!
