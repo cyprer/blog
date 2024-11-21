@@ -2,11 +2,6 @@ site_name: cypress' blog
 site_author: cypress
 theme:
   name: material
-  features:
-    - navigation.sections    # 显示分区
-    - navigation.expand     # 默认展开
-    - navigation.indexes    # 使用索引页
-    - navigation.top        # 返回顶部按钮
   palette:
     # 亮色主题
     - media: "(prefers-color-scheme: light)"
@@ -38,8 +33,3 @@ plugins:
       blog_dir: blog
       post_url_format: "{slug}"
       post_excerpt: optional
-
-nav:
-  - home:index.md
-  - 建站历程:site-construction.md
-  - 计算机基础:cs fundament/initial.md
