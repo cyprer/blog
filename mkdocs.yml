@@ -1,7 +1,17 @@
-site_name: My Docs
+site_name: cypress' blog
+site_author: cypress
 theme:
- name: material
- palette:
+  name: material
+  features:
+    - navigation.sections    # 显示分区
+    - navigation.expand     # 默认展开
+    - navigation.indexes    # 使用索引页
+    - navigation.top        # 返回顶部按钮
+  # 导航栏设置
+  nav_style: dark          # 导航栏样式
+  collapse_navigation: true # 折叠导航
+  sticky_navigation: true  # 固定导航
+  palette:
     # 亮色主题
     - media: "(prefers-color-scheme: light)"
       scheme: default
@@ -19,3 +29,35 @@ theme:
       toggle:
         icon: material/brightness-4
         name: 切换至亮色模式
+
+markdown_extensions:
+  - toc:
+      permalink: true        # 添加段落链接
+      toc_depth: 3          # 目录深度
+      separator: "_"        # 标题锚点分隔符
+      title: "目录"         # 目录标题
+
+plugins:
+  - blog:
+      blog_dir: blog
+      post_url_format: "{slug}"
+      post_excerpt: optional
+
+  - tags:
+      tags_file: tags.md
+
+  - rss:
+      abstract_chars_count: 160
+      date_from_meta: true
+
+  - statistics:
+      page_check: true
+      page_count: true
+nav:
+  - home:
+    - index.md
+  - 建站历程:site-construction.md
+  - leraning notes:
+    - csapp:
+    - 计网:
+    - cs61b:
