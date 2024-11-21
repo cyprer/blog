@@ -33,3 +33,9 @@ plugins:
       blog_dir: blog
       post_url_format: "{slug}"
       post_excerpt: optional
+
+nav: 
+  - 计算机基础:
+    - 计组:cs-fundament/csapp.md
+    - 计网:cs-fundament/cs-net.md
+    - 数据结构:cs-fundament/datastructure.md
