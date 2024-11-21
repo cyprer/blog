@@ -7,10 +7,6 @@ theme:
     - navigation.expand     # 默认展开
     - navigation.indexes    # 使用索引页
     - navigation.top        # 返回顶部按钮
-  # 导航栏设置
-  nav_style: dark          # 导航栏样式
-  collapse_navigation: true # 折叠导航
-  sticky_navigation: true  # 固定导航
   palette:
     # 亮色主题
     - media: "(prefers-color-scheme: light)"
@@ -54,10 +50,6 @@ plugins:
       page_check: true
       page_count: true
 nav:
-  - home:
-    - index.md
+  - home:index.md
   - 建站历程:site-construction.md
-  - leraning notes:
-    - csapp:
-    - 计网:
-    - cs61b:
+  - 计算机基础:cs fundament/initial.md
