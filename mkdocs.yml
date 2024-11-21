@@ -39,16 +39,6 @@ plugins:
       post_url_format: "{slug}"
       post_excerpt: optional
 
-  - tags:
-      tags_file: tags.md
-
-  - rss:
-      abstract_chars_count: 160
-      date_from_meta: true
-
-  - statistics:
-      page_check: true
-      page_count: true
 nav:
   - home:index.md
   - 建站历程:site-construction.md
