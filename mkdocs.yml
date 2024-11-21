@@ -2,6 +2,8 @@ site_name: cypress' blog
 site_author: cypress
 theme:
   name: material
+  features:
+    - navigation.indexes
   palette:
     # 亮色主题
     - media: "(prefers-color-scheme: light)"
@@ -31,11 +33,14 @@ markdown_extensions:
 plugins:
   - blog:
       blog_dir: blog
+      archive_date_format: MMMM yyyy
       post_url_format: "{slug}"
       post_excerpt: optional
 
 nav: 
-  - 计算机基础:
-    - 计组: cs-fundament/csapp.md
-    - 计网: cs-fundament/cs-net.md
-    - 数据结构: cs-fundament/datastructure.md
+  - blog:
+    - blog/index.md
+    - 计算机基础:
+      - 计组: blog/csapp.md
+      - 计网: blog/cs-net.md
+      - 数据结构: blog/datastructure.md
