@@ -44,3 +44,4 @@ nav:
       - 计组: blog/csapp.md
       - 计网: blog/cs-net.md
       - 数据结构: blog/datastructure.md
+      - 建站教程: site-construction.md
