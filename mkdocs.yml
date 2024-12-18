@@ -45,5 +45,5 @@ nav:
         - 数据结构:note/datastructure.md
         - 建站教程:note/site-construction.md
     - summary: summary/index.md
-        - 2025年: summary/25year.md
-          - 1月: summary/25year/1.md
+        - 2025年: summary/25year/index.md
+            - 1月: summary/25year/1.md
