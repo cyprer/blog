@@ -33,18 +33,18 @@ markdown_extensions:
 plugins:
   - blog:
       blog_dir: blog
-      archive_date_format: MMMM yyyy
       post_url_format: "{slug}"
       post_excerpt: optional
 
 
 nav:
-  - blog: index.md
-  - 笔记: note/index.md
-      - 计组: note/csapp.md
-      - 计网: note/cs-net.md
-      - 数据结构: note/datastructure.md
-      - 建站教程: note/site-construction.md
-  - summary: summary/index.md
-          - 2025年: summary/25year/index.md
-              - 1月: summary/25year/1.md
+  - blog:
+      - blog/index.md
+      - 笔记:
+          - 计组: note/csapp.md
+          - 计网: note/cs-net.md
+          - 数据结构: note/datastructure.md
+          - 建站教程: note/site-construction.md
+      - summary:
+        - 2025年:
+            - 1月: summary/25year/1.md
