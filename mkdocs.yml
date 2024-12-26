@@ -44,6 +44,8 @@ nav:
           - 计组: note/csapp.md
           - 计网: note/cs-net.md
           - 数据结构: note/datastructure.md
+          - 操作系统: note/os.md
+          - 图灵完备: note/turing.md
           - 建站教程: note/site-construction.md
       - summary:
         - 2025年:
