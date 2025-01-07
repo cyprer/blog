@@ -41,11 +41,6 @@ nav:
   - blog:
       - blog/index.md
       - 笔记:
-          - 计组: note/csapp.md
-          - 计网: note/cs-net.md
-          - 操作系统: note/os.md
-          - 图灵完备: note/turing.md
-          - 建站教程: note/site-construction.md
           - 数据结构:
               - 代码随想录:
                   - 数组:
@@ -53,6 +48,11 @@ nav:
                       - 快慢指针: note/datastructure/array/fast-slow-pointer.md
                       - 双指针: note/datastructure/array/double-pointer.md
                       - 滑动窗口: note/datastructure/array/sliding-window.md
+          - 计组: note/csapp.md
+          - 计网: note/cs-net.md
+          - 操作系统: note/os.md
+          - 图灵完备: note/turing.md
+          - 建站教程: note/site-construction.md
       - summary:
         - 2025年:
             - 1月: summary/25year/1.md
