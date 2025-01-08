@@ -55,4 +55,6 @@ nav:
           - 建站教程: note/site-construction.md
       - summary:
         - 2025年:
-            - 1月: summary/25year/1.md
+            - 1月:
+                - 第一周: summary/2025year/1month/1week.md
+                - 第二周: summary/2025year/1month/2week.md

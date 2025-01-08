@@ -16,13 +16,9 @@
 输入：target = 4, nums = [1,4,4]
 输出：1
 
-
-
-
-
+解法:
+``` java
 class Solution {
-
-    // 滑动窗口
     public int minSubArrayLen(int s, int[] nums) {
         int left = 0;
         int sum = 0;
@@ -37,3 +33,4 @@ class Solution {
         return result == Integer.MAX_VALUE ? 0 : result;
     }
 }
+```
