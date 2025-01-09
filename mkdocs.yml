@@ -41,6 +41,7 @@ nav:
   - blog:
       - blog/index.md
       - 笔记:
+          - note/index.md
           - 数据结构:
               - 代码随想录:
                   - 数组:
@@ -54,7 +55,10 @@ nav:
           - 图灵完备: note/turing.md
           - 建站教程: note/site-construction.md
       - summary:
+          - summary/index.md
           - 2025年:
+              - summary/25year/index.md
               - 1月:
+                  - summary/25year/1month/index.md
                   - 第一周: summary/25year/1month/1week.md
                   - 第二周: summary/25year/1month/2week.md
