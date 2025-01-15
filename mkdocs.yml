@@ -49,16 +49,19 @@ nav:
                       - 快慢指针: note/datastructure/array/fast-slow-pointer.md
                       - 双指针: note/datastructure/array/double-pointer.md
                       - 滑动窗口: note/datastructure/array/sliding-window.md
-          - 计组: note/csapp.md
+                      - 螺旋矩阵: note/datastructure/array/spiral-matrix.md
+                      - 区间和: note/datastructure/array/interval-sum.md
+                      - 分配土地: note/datastructure/array/land-allocation.md
+          - 计组:
+            - csapp: note/cs_composition/csapp.md
+            - cs61c: note/cs_composition/cs61c.md
           - 计网: note/cs-net.md
           - 操作系统: note/os.md
           - 图灵完备: note/turing.md
           - 建站教程: note/site-construction.md
       - summary:
-          - summary/index.md
           - 2025年:
-              - summary/25year/index.md
               - 1月:
-                  - summary/25year/1month/index.md
                   - 第一周: summary/25year/1month/1week.md
                   - 第二周: summary/25year/1month/2week.md
+                  - 第三周: summary/25year/1month/3week.md
