@@ -54,7 +54,13 @@ nav:
                       - 分配土地: note/datastructure/array/land-allocation.md
           - 计组:
             - csapp: note/cs_composition/csapp.md
-            - cs61c: note/cs_composition/cs61c.md
+            - cs61c:
+                - knowledge:
+                  - 内存管理: note/cs_composition/cs61c/knowledge/memory_management.md
+                - labs:
+                  - lab1: note/cs_composition/cs61c/labs/lab1.md
+                - projects:
+                  - project1: note/cs_composition/cs61c/projects/project1.md
           - 计网: note/cs-net.md
           - 操作系统: note/os.md
           - 图灵完备: note/turing.md
