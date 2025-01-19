@@ -57,6 +57,8 @@ nav:
             - cs61c:
                 - knowledge:
                   - 内存管理: note/cs_composition/cs61c/knowledge/memory_management.md
+                  - 浮点数: note/cs_composition/cs61c/knowledge/floating-point.md
+                  - risv-v: note/cs_composition/cs61c/knowledge/risv-v.md
                 - labs:
                   - lab1: note/cs_composition/cs61c/labs/lab1.md
                 - projects:
