@@ -41,7 +41,10 @@ nav:
   - blog:
       - blog/index.md
       - 笔记:
-          - note/index.md
+          - ssm:
+              - spring: note/notes/ssm/spring.md
+              - springmvc: note/notes/ssm/springmvc.md
+              - mybatis: note/notes/ssm/mybatis.md
           - 数据结构:
               - 代码随想录:
                   - 数组:
