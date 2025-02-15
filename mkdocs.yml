@@ -42,9 +42,9 @@ nav:
       - blog/index.md
       - 笔记:
           - ssm:
-              - spring: note/notes/ssm/spring.md
-              - springmvc: note/notes/ssm/springmvc.md
-              - mybatis: note/notes/ssm/mybatis.md
+              - spring: note/ssm/spring.md
+              - springmvc: note/ssm/springmvc.md
+              - mybatis: note/ssm/mybatis.md
           - 数据结构:
               - 代码随想录:
                   - 数组:
