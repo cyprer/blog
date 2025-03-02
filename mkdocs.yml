@@ -46,7 +46,7 @@ nav:
               - springmvc: note/ssm/springmvc.md
               - mybatis: note/ssm/mybatis.md
               - 黑马点评:
-                - 
+                - 短信登陆: note/ssm/hmdt/login.md
           - 数据结构:
               - 代码随想录:
                   - 数组:
