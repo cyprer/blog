@@ -76,11 +76,13 @@ nav:
       - summary:
           - 2025年:
               - 1月:
+                  - summary\25year\1month\index.md
                   - 第一周: summary/25year/1month/1week.md
                   - 第二周: summary/25year/1month/2week.md
                   - 第三周: summary/25year/1month/3week.md
                   - 第四周: summary/25year/1month/4week.md
               - 2月:
+                  - summary\25year\2month\index.md
                   - 第一周: summary/25year/2month/1week.md
                   - 第二周: summary/25year/2month/2week.md
                   - 第三周: summary/25year/2month/3week.md
