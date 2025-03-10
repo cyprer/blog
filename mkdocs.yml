@@ -41,7 +41,6 @@ nav:
   - blog:
       - blog/index.md
       - 笔记:
-          - note/index.md
           - 数据结构:
               - 代码随想录:
                   - 数组:
@@ -52,6 +51,11 @@ nav:
                       - 螺旋矩阵: note/datastructure/array/spiral-matrix.md
                       - 区间和: note/datastructure/array/interval-sum.md
                       - 分配土地: note/datastructure/array/land-allocation.md
+              - 刷题日记:
+                - 2025:
+                  - 3月:
+                    - 8号: note/datastructure/diary/2025/3month/8.md
+                    - 9号: note/datastructure/diary/2025/3month/9.md
           - 计组:
             - csapp: note/cs_composition/csapp.md
             - cs61c:
@@ -72,3 +76,13 @@ nav:
               - 1月:
                   - 第一周: summary/25year/1month/1week.md
                   - 第二周: summary/25year/1month/2week.md
+                  - 第三周: summary/25year/1month/3week.md
+                  - 第四周: summary/25year/1month/4week.md
+              - 2月:
+                  - 第一周: summary/25year/2month/1week.md
+                  - 第二周: summary/25year/2month/2week.md
+                  - 第三周: summary/25year/2month/3week.md
+                  - 第四周: summary/25year/2month/4week.md
+              - 3月:
+                  - 第一周: summary/25year/3month/1week.md
+                  - 第二周: summary/25year/3month/2week.md
