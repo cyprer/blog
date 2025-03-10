@@ -1,0 +1,2168 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="cypress">
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Spring 框架介绍 - cypress' blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#spring" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="cypress&#39; blog" class="md-header__button md-logo" aria-label="cypress' blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            cypress' blog
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Spring 框架介绍
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至暗色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至暗色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="切换至亮色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至亮色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="cypress&#39; blog" class="md-nav__button md-logo" aria-label="cypress' blog" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    cypress' blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../blog/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    blog
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_1" id="__nav_1_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            blog
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    笔记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            笔记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1" id="__nav_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数据结构
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            数据结构
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1_1" id="__nav_1_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    代码随想录
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            代码随想录
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1_1_1" id="__nav_1_2_1_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    数组
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_1_2_1_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            数组
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/array/binary-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    二分查找
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/array/fast-slow-pointer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    快慢指针
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/array/double-pointer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    双指针
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/array/sliding-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    滑动窗口
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/array/spiral-matrix/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    螺旋矩阵
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/array/interval-sum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    区间和
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/array/land-allocation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    分配土地
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1_2" id="__nav_1_2_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    刷题日记
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_2_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            刷题日记
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1_2_1" id="__nav_1_2_1_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2025
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_1_2_1_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            2025
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_1_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_1_2_1_1" id="__nav_1_2_1_2_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3月
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="6" aria-labelledby="__nav_1_2_1_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_1_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            3月
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/diary/2025/3month/8/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructure/diary/2025/3month/9/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9号
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_2" id="__nav_1_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    计组
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            计组
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs_composition/csapp/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    csapp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_2_2" id="__nav_1_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    cs61c
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            cs61c
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_2_2_1" id="__nav_1_2_2_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    knowledge
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_1_2_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            knowledge
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs_composition/cs61c/knowledge/memory_management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    内存管理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs_composition/cs61c/knowledge/floating-point/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    浮点数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs_composition/cs61c/knowledge/risv-v/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    risv-v
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_2_2_2" id="__nav_1_2_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    labs
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_1_2_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            labs
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs_composition/cs61c/labs/lab1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    lab1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_2_2_2_3" id="__nav_1_2_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    projects
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="5" aria-labelledby="__nav_1_2_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_2_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            projects
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs_composition/cs61c/projects/project1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    project1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cs-net/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    计网
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    操作系统
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../turing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    图灵完备
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../site-construction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    建站教程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3" id="__nav_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    summary
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            summary
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_1" id="__nav_1_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2025年
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_1_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            2025年
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_1_1" id="__nav_1_3_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    1月
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_3_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            1月
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/1month/1week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第一周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/1month/2week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第二周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/1month/3week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第三周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/1month/4week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第四周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_1_2" id="__nav_1_3_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    2月
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            2月
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/2month/1week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第一周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/2month/2week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第二周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/2month/3week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第三周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/2month/4week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第四周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_3_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_1_3_1_3" id="__nav_1_3_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    3月
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_1_3_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            3月
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/3month/1week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第一周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../summary/25year/3month/2week/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第二周
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1_spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 什么是 Spring？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2_spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Spring 的核心概念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Spring 的核心概念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21_ioc" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1 控制反转（IoC）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22_di" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2 依赖注入（DI）
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23_aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3 面向切面编程（AOP）
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3_spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Spring 的优势
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Spring 的优势">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 简化开发
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 框架集成
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 企业级支持
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 社区活跃
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4_spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Spring 的应用场景
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Spring 的应用场景">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41_web" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.1 Web 应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.2 企业级应用
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.3 微服务架构
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.4 数据访问
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5_spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Spring 的主要模块
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Spring 的主要模块">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#51_spring_core" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1 Spring Core
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#52_spring_beans" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2 Spring Beans
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#53_spring_context" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3 Spring Context
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#54_spring_aop" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.4 Spring AOP
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#55_spring_orm" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.5 Spring ORM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#56_spring_web" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.6 Spring Web
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6_spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Spring 的发展
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 参考资料
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="spring">Spring 框架介绍<a class="headerlink" href="#spring" title="Permanent link">&para;</a></h1>
+<h2 id="1_spring">1. 什么是 Spring？<a class="headerlink" href="#1_spring" title="Permanent link">&para;</a></h2>
+<p>Spring 是一个开源的 Java 平台，用于构建轻量级、高性能的企业级应用。它提供了全面的基础设施支持，使开发者能够专注于应用的业务逻辑，而不必过多关注底层的复杂性。Spring 的核心理念是<strong>控制反转（IoC）</strong>和<strong>面向切面编程（AOP）</strong>。</p>
+<h2 id="2_spring">2. Spring 的核心概念<a class="headerlink" href="#2_spring" title="Permanent link">&para;</a></h2>
+<h3 id="21_ioc">2.1 控制反转（IoC）<a class="headerlink" href="#21_ioc" title="Permanent link">&para;</a></h3>
+<p>控制反转（Inversion of Control，IoC）是一种设计思想，用于减少代码之间的耦合性。它的核心是将对象的创建和依赖关系的管理交给外部容器（如 Spring 容器），而不是由对象自己去创建和管理。这种方式使得对象之间的依赖关系更加清晰，代码更容易维护。</p>
+<h3 id="22_di">2.2 依赖注入（DI）<a class="headerlink" href="#22_di" title="Permanent link">&para;</a></h3>
+<p>依赖注入（Dependency Injection，DI）是实现控制反转的具体方式。通过依赖注入，Spring 容器会将依赖对象注入到目标对象中，从而实现对象之间的解耦。依赖注入的常见方式包括：
+- <strong>构造器注入</strong>：通过构造函数注入依赖。
+- <strong>Setter 方法注入</strong>：通过 setter 方法注入依赖。
+- <strong>字段注入</strong>：通过注解（如 <code>@Autowired</code>）直接注入依赖。</p>
+<h3 id="23_aop">2.3 面向切面编程（AOP）<a class="headerlink" href="#23_aop" title="Permanent link">&para;</a></h3>
+<p>面向切面编程（Aspect-Oriented Programming，AOP）是一种编程范式，允许开发者将通用功能（如日志记录、事务管理、安全性控制等）抽取出来，集中管理。这些通用功能被称为“切面”，可以动态地应用于目标对象，从而减少代码重复和提高可维护性。</p>
+<h2 id="3_spring">3. Spring 的优势<a class="headerlink" href="#3_spring" title="Permanent link">&para;</a></h2>
+<h3 id="31">3.1 简化开发<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
+<p>Spring 提供了丰富的功能，使开发者能够快速构建应用程序。它简化了配置和依赖管理，减少了模板代码，使开发更加高效。</p>
+<h3 id="32">3.2 框架集成<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
+<p>Spring 可以与其他流行的框架和库无缝集成，如 MyBatis、Hibernate、Spring Boot 等。这使得开发者可以根据项目需求选择合适的工具，提高开发效率。</p>
+<h3 id="33">3.3 企业级支持<a class="headerlink" href="#33" title="Permanent link">&para;</a></h3>
+<p>Spring 提供了全面的企业级支持，包括事务管理、安全控制、消息传递、缓存等。这使得开发者能够构建健壮、可扩展的企业级应用。</p>
+<h3 id="34">3.4 社区活跃<a class="headerlink" href="#34" title="Permanent link">&para;</a></h3>
+<p>Spring 拥有庞大的社区和丰富的学习资源。开发者可以轻松地找到解决方案和最佳实践，提高自己的技能水平。</p>
+<h2 id="4_spring">4. Spring 的应用场景<a class="headerlink" href="#4_spring" title="Permanent link">&para;</a></h2>
+<h3 id="41_web">4.1 Web 应用<a class="headerlink" href="#41_web" title="Permanent link">&para;</a></h3>
+<p>Spring 提供了 Spring MVC 框架，用于构建高性能的 Web 应用。它支持 RESTful API、模板引擎（如 JSP、Thymeleaf）、表单处理等功能，使开发者能够轻松地开发 Web 应用。</p>
+<h3 id="42">4.2 企业级应用<a class="headerlink" href="#42" title="Permanent link">&para;</a></h3>
+<p>Spring 提供了全面的企业级支持，包括事务管理、安全控制、消息传递、缓存等。这使得开发者能够构建健壮、可扩展的企业级应用。</p>
+<h3 id="43">4.3 微服务架构<a class="headerlink" href="#43" title="Permanent link">&para;</a></h3>
+<p>Spring Boot 是 Spring 生态系统中的一个重要组成部分，它简化了微服务的开发和部署。通过 Spring Boot，开发者可以快速构建独立的、可部署的微服务，实现服务的解耦和扩展。</p>
+<h3 id="44">4.4 数据访问<a class="headerlink" href="#44" title="Permanent link">&para;</a></h3>
+<p>Spring 提供了对多种数据访问技术的支持，包括 JDBC、ORM 框架（如 Hibernate、MyBatis）和 NoSQL 数据库。它通过模板类封装了底层的数据库操作，减少了模板代码的编写。</p>
+<h2 id="5_spring">5. Spring 的主要模块<a class="headerlink" href="#5_spring" title="Permanent link">&para;</a></h2>
+<h3 id="51_spring_core">5.1 Spring Core<a class="headerlink" href="#51_spring_core" title="Permanent link">&para;</a></h3>
+<p>Spring Core 是 Spring 框架的核心模块，提供了 IoC 容器的功能，是整个 Spring 框架的基础。</p>
+<h3 id="52_spring_beans">5.2 Spring Beans<a class="headerlink" href="#52_spring_beans" title="Permanent link">&para;</a></h3>
+<p>Spring Beans 模块提供了 BeanFactory，它是工厂模式的经典实现，用于管理对象的创建和依赖注入。</p>
+<h3 id="53_spring_context">5.3 Spring Context<a class="headerlink" href="#53_spring_context" title="Permanent link">&para;</a></h3>
+<p>Spring Context 模块扩展了 Spring Core 和 Beans 模块，提供了更高级的容器功能，如事件传播、国际化消息支持等。</p>
+<h3 id="54_spring_aop">5.4 Spring AOP<a class="headerlink" href="#54_spring_aop" title="Permanent link">&para;</a></h3>
+<p>Spring AOP 模块提供了面向切面编程的支持，允许开发者将通用功能抽取为切面，并将其应用到目标对象上。</p>
+<h3 id="55_spring_orm">5.5 Spring ORM<a class="headerlink" href="#55_spring_orm" title="Permanent link">&para;</a></h3>
+<p>Spring ORM 模块提供了对 ORM 框架（如 Hibernate、MyBatis 等）的集成支持，简化了数据访问层的开发。</p>
+<h3 id="56_spring_web">5.6 Spring Web<a class="headerlink" href="#56_spring_web" title="Permanent link">&para;</a></h3>
+<p>Spring Web 模块提供了 Web 应用开发的支持，包括 Spring MVC 框架，用于构建基于 HTTP 的 Web 应用。</p>
+<h2 id="6_spring">6. Spring 的发展<a class="headerlink" href="#6_spring" title="Permanent link">&para;</a></h2>
+<p>Spring 框架自 2003 年发布以来，经历了多个版本的迭代。随着 Spring Boot 和 Spring Cloud 的推出，Spring 框架在微服务架构和云原生应用开发中得到了广泛应用，成为 Java 开发领域的重要技术栈。</p>
+<h2 id="7">7. 参考资料<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://spring.io/projects/spring-framework">Spring 官方文档</a></li>
+<li><a href="https://spring.io/projects/spring-boot">Spring Boot 官方文档</a></li>
+<li><a href="https://spring.io/projects/spring-cloud">Spring Cloud 官方文档</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.indexes"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
